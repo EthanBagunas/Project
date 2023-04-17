@@ -42,7 +42,7 @@ namespace Project
             }
         }
 
-        
+
 
         private void delete_Click(object sender, EventArgs e)
         {/*

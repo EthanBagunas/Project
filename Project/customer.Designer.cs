@@ -45,7 +45,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(12, 75);
+            label2.Location = new Point(12, 35);
             label2.Name = "label2";
             label2.Size = new Size(75, 20);
             label2.TabIndex = 1;
@@ -54,7 +54,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(12, 117);
+            label3.Location = new Point(12, 77);
             label3.Name = "label3";
             label3.Size = new Size(76, 20);
             label3.TabIndex = 2;
@@ -63,7 +63,7 @@
             // contact
             // 
             contact.AutoSize = true;
-            contact.Location = new Point(12, 159);
+            contact.Location = new Point(12, 119);
             contact.Name = "contact";
             contact.Size = new Size(121, 20);
             contact.TabIndex = 3;
@@ -71,21 +71,21 @@
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(146, 75);
+            textBox2.Location = new Point(146, 35);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(152, 27);
             textBox2.TabIndex = 5;
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(146, 117);
+            textBox3.Location = new Point(146, 77);
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(152, 27);
             textBox3.TabIndex = 6;
             // 
             // textBox4
             // 
-            textBox4.Location = new Point(146, 159);
+            textBox4.Location = new Point(146, 119);
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(152, 27);
             textBox4.TabIndex = 7;
@@ -137,7 +137,7 @@
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.RowTemplate.Height = 29;
-            dataGridView1.Size = new Size(443, 370);
+            dataGridView1.Size = new Size(453, 389);
             dataGridView1.TabIndex = 12;
             // 
             // Customer
