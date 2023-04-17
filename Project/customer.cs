@@ -45,17 +45,18 @@ namespace Project
 
 
         private void delete_Click(object sender, EventArgs e)
-        {/*
+        {
             try
             {
-               
-                string Query = "delete from studen where idStudentInfo='" + this.IdTextBox.Text + "';";
+
+                string Query = "DELETE FROM customer WHERE cus_id = @id;";
                 MySqlConnection MyConn2 = new MySqlConnection(conn);
                 MySqlCommand MyCommand2 = new MySqlCommand(Query, MyConn2);
+                MyCommand2.Parameters.AddWithValue("@id", dataGridView1.CurrentRow.Cells[0].Value);
                 MySqlDataReader MyReader2;
                 MyConn2.Open();
                 MyReader2 = MyCommand2.ExecuteReader();
-                MessageBox.Show("Data Deleted");
+               
                 while (MyReader2.Read())
                 {
                 }
@@ -64,7 +65,7 @@ namespace Project
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-            }*/
+            }
         }
 
         private void update_Click(object sender, EventArgs e)
@@ -101,7 +102,7 @@ namespace Project
                 MySqlDataReader MyReader2;
                 myconn.Open();
                 MyReader2 = MyCommand2.ExecuteReader();
-                MessageBox.Show("Save Data?");
+                
                 while (MyReader2.Read())
                 {
                 }
