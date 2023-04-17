@@ -69,27 +69,29 @@ namespace Project
         }
 
         private void update_Click(object sender, EventArgs e)
-        {/*
+        {
             try
             {
 
-                string Query = "update hotel.customer set Lastname='" + this.textBox2.Text + "',Firstname='" + this.textBox3.Text + "',Contact='" + this.textBox3.Text + "'where idStudentInfo='" + this.IdTextBox.Text + "';";
+                string Query = "update customer set Lastname='" + this.textBox2.Text + "',Firstname='" + this.textBox3.Text + "',Contact='" + this.textBox4.Text + "'where cus_id=@id;";
                 //This is  MySqlConnection here i have created the object and pass my connection string.
-                MySqlConnection MyConn2 = new MySqlConnection(MyConnection2);
+                MySqlConnection MyConn2 = new MySqlConnection(conn);
+
                 MySqlCommand MyCommand2 = new MySqlCommand(Query, MyConn2);
+                MyCommand2.Parameters.AddWithValue("@id", dataGridView1.CurrentRow.Cells[0].Value);
                 MySqlDataReader MyReader2;
                 MyConn2.Open();
                 MyReader2 = MyCommand2.ExecuteReader();
-                MessageBox.Show("Data Updated");
+                
                 while (MyReader2.Read())
                 {
                 }
-                MyConn2.Close();//Connection closed here
+                MyConn2.Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-            }*/
+            }
         }
 
         private void insert_Click(object sender, EventArgs e)
