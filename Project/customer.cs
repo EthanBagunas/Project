@@ -74,7 +74,6 @@ namespace Project
             {
 
                 string Query = "update customer set Lastname='" + this.textBox2.Text + "',Firstname='" + this.textBox3.Text + "',Contact='" + this.textBox4.Text + "'where cus_id=@id;";
-                //This is  MySqlConnection here i have created the object and pass my connection string.
                 MySqlConnection MyConn2 = new MySqlConnection(conn);
 
                 MySqlCommand MyCommand2 = new MySqlCommand(Query, MyConn2);
