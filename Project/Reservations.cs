@@ -4,10 +4,12 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 
 namespace Project
@@ -28,8 +30,8 @@ namespace Project
 
             dateTimePicker1.Format = DateTimePickerFormat.Custom;
             dateTimePicker1.CustomFormat = "ddd dd MMM yyyy";
-            
-           
+
+
 
         }
 
@@ -65,7 +67,7 @@ namespace Project
             try
             {
 
-                string Query = "DELETE FROM customer WHERE cus_id = @id;";
+                string Query = "DELETE FROM reservations WHERE res_id = @id;";
                 MySqlConnection MyConn2 = new MySqlConnection(conn);
                 MySqlCommand MyCommand2 = new MySqlCommand(Query, MyConn2);
                 MyCommand2.Parameters.AddWithValue("@id", dataGridView1.CurrentRow.Cells[0].Value);
@@ -86,15 +88,24 @@ namespace Project
 
         private void reserve_Click(object sender, EventArgs e)
         {
-            string dateString = dateTimePicker1.Value.ToString("yyyy-MM-dd");
-            string timeString = dateTimePicker1.Value.ToString("HH:mm:ss");
+
             string room = comboBox1.SelectedItem.ToString();
+            string currentTime = DateTime.Now.ToString("hh:mm:ss");
+            string currentDate = DateTime.Now.ToString("yyyy-MM-dd");
+
+            DateTime inDateTime = dateTimePicker1.Value;
+            string inDate = inDateTime.ToString("yyyy-MM-dd");
+            
+            int days = int.Parse(daytext.Text);
+            
+            DateTime outDateTime = inDateTime.AddDays(days);
+            string outDate = outDateTime.ToString("yyyy-MM-dd");
+            
+            
 
             try
             {
-                
-
-                string Query = "insert into reservations(cus_id,room_id,rsrv_date,rsrv_time) values('" + this.textBox2.Text + "','" + room+ "','" + dateString+ "','" + timeString+ "');";
+                string Query = "insert into reservations(cus_id,room_id,check_in,check_out,res_date,res_time) values('" + this.textBox2.Text + "','" + room + "','" + inDate + "','" + outDate + "','" + currentDate + "','" + currentTime + "');";
                 MySqlConnection myconn = new MySqlConnection(conn);
                 MySqlCommand MyCommand2 = new MySqlCommand(Query, myconn);
                 MySqlDataReader MyReader2;
