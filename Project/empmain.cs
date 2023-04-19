@@ -25,7 +25,7 @@ namespace Project
 
         private void transact_Click(object sender, EventArgs e)
         {
-            Transactions trans = new Transactions();
+            checkin trans = new checkin();
             trans.Show();
         }
 
@@ -37,7 +37,7 @@ namespace Project
 
         private void customer_Click(object sender, EventArgs e)
         {
-            Customer cus = new Customer();  
+            Customer cus = new Customer();
             cus.Show();
         }
 
@@ -48,7 +48,7 @@ namespace Project
 
         private void reserve_Click(object sender, EventArgs e)
         {
-            Reservations rsrv = new Reservations(); 
+            Reservations rsrv = new Reservations();
             rsrv.Show();
         }
     }

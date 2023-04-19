@@ -52,7 +52,7 @@
             transact.Name = "transact";
             transact.Size = new Size(250, 50);
             transact.TabIndex = 0;
-            transact.Text = "Transactions";
+            transact.Text = "Check-In";
             transact.UseVisualStyleBackColor = false;
             transact.Click += transact_Click;
             // 

@@ -30,9 +30,7 @@
         {
             label2 = new Label();
             load = new Button();
-            insert = new Button();
             delete = new Button();
-            button4 = new Button();
             dataGridView1 = new DataGridView();
             dateTimePicker1 = new DateTimePicker();
             newcus = new Button();
@@ -43,6 +41,7 @@
             button1 = new Button();
             daytext = new TextBox();
             label1 = new Label();
+            insert = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -57,7 +56,7 @@
             // 
             // load
             // 
-            load.Location = new Point(53, 332);
+            load.Location = new Point(43, 380);
             load.Name = "load";
             load.Size = new Size(94, 29);
             load.TabIndex = 8;
@@ -65,34 +64,15 @@
             load.UseVisualStyleBackColor = true;
             load.Click += load_Click;
             // 
-            // insert
-            // 
-            insert.Location = new Point(53, 385);
-            insert.Name = "insert";
-            insert.Size = new Size(94, 29);
-            insert.TabIndex = 9;
-            insert.Text = "Reserve";
-            insert.UseVisualStyleBackColor = true;
-            insert.Click += reserve_Click;
-            // 
             // delete
             // 
-            delete.Location = new Point(182, 332);
+            delete.Location = new Point(182, 380);
             delete.Name = "delete";
             delete.Size = new Size(94, 29);
             delete.TabIndex = 10;
             delete.Text = "Delete";
             delete.UseVisualStyleBackColor = true;
             delete.Click += delete_Click;
-            // 
-            // button4
-            // 
-            button4.Location = new Point(182, 385);
-            button4.Name = "button4";
-            button4.Size = new Size(94, 29);
-            button4.TabIndex = 11;
-            button4.Text = "button4";
-            button4.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
             // 
@@ -118,9 +98,9 @@
             // 
             // newcus
             // 
-            newcus.Location = new Point(53, 279);
+            newcus.Location = new Point(43, 285);
             newcus.Name = "newcus";
-            newcus.Size = new Size(223, 29);
+            newcus.Size = new Size(233, 29);
             newcus.TabIndex = 19;
             newcus.Text = "New Customer";
             newcus.UseVisualStyleBackColor = true;
@@ -162,9 +142,9 @@
             // 
             // button1
             // 
-            button1.Location = new Point(53, 230);
+            button1.Location = new Point(43, 230);
             button1.Name = "button1";
-            button1.Size = new Size(223, 29);
+            button1.Size = new Size(233, 29);
             button1.TabIndex = 24;
             button1.Text = "Room Status";
             button1.UseVisualStyleBackColor = true;
@@ -186,6 +166,16 @@
             label1.TabIndex = 26;
             label1.Text = "No. of Days";
             // 
+            // insert
+            // 
+            insert.Location = new Point(43, 331);
+            insert.Name = "insert";
+            insert.Size = new Size(233, 29);
+            insert.TabIndex = 9;
+            insert.Text = "Reserve";
+            insert.UseVisualStyleBackColor = true;
+            insert.Click += reserve_Click;
+            // 
             // Reservations
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -201,7 +191,6 @@
             Controls.Add(newcus);
             Controls.Add(dateTimePicker1);
             Controls.Add(dataGridView1);
-            Controls.Add(button4);
             Controls.Add(delete);
             Controls.Add(insert);
             Controls.Add(load);
@@ -216,9 +205,7 @@
         #endregion
         private Label label2;
         private Button load;
-        private Button insert;
         private Button delete;
-        private Button button4;
         private DataGridView dataGridView1;
         private DateTimePicker dateTimePicker1;
         private Button newcus;
@@ -229,5 +216,6 @@
         private Button button1;
         private TextBox daytext;
         private Label label1;
+        private Button insert;
     }
 }

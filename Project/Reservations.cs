@@ -104,7 +104,7 @@ namespace Project
 
             try
             {
-                string Query = "insert into reservations(cus_id,room_id,check_in,check_out,res_date,res_time) values('" + this.textBox2.Text + "','" + room + "','" + inDate + "','" + outDate + "','" + currentDate + "','" + currentTime + "');UPDATE rooms SET Status = 'RESERVED' WHERE rooms_id = '"+room+"';";
+                string Query = "insert into reservations(cus_id,room_id,check_in,check_out,res_date,res_time) values('" + this.textBox2.Text + "','" + room + "','" + inDate + "','" + outDate + "','" + currentDate + "','" + currentTime + "');UPDATE rooms SET Status = 'RESERVED' WHERE rooms_id = '" + room + "';";
                 MySqlConnection myconn = new MySqlConnection(conn);
                 MySqlCommand MyCommand1 = new MySqlCommand(Query, myconn);
                 MySqlDataReader MyReader2;
