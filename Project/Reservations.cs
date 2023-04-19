@@ -95,27 +95,47 @@ namespace Project
 
             DateTime inDateTime = dateTimePicker1.Value;
             string inDate = inDateTime.ToString("yyyy-MM-dd");
-            
+
             int days = int.Parse(daytext.Text);
-            
+
             DateTime outDateTime = inDateTime.AddDays(days);
             string outDate = outDateTime.ToString("yyyy-MM-dd");
-            
-            
+
 
             try
             {
-                string Query = "insert into reservations(cus_id,room_id,check_in,check_out,res_date,res_time) values('" + this.textBox2.Text + "','" + room + "','" + inDate + "','" + outDate + "','" + currentDate + "','" + currentTime + "');";
+                string Query = "insert into reservations(cus_id,room_id,check_in,check_out,res_date,res_time) values('" + this.textBox2.Text + "','" + room + "','" + inDate + "','" + outDate + "','" + currentDate + "','" + currentTime + "');UPDATE rooms SET Status = 'RESERVED' WHERE rooms_id = '"+room+"';";
                 MySqlConnection myconn = new MySqlConnection(conn);
-                MySqlCommand MyCommand2 = new MySqlCommand(Query, myconn);
+                MySqlCommand MyCommand1 = new MySqlCommand(Query, myconn);
                 MySqlDataReader MyReader2;
                 myconn.Open();
-                MyReader2 = MyCommand2.ExecuteReader();
+                MyReader2 = MyCommand1.ExecuteReader();
 
                 while (MyReader2.Read())
                 {
                 }
                 myconn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void room_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                string Query = "select * from rooms;";
+                MySqlConnection myconn = new MySqlConnection(conn);
+                MySqlCommand cmd = new MySqlCommand(Query, myconn);
+
+                MySqlDataAdapter MyAdapter = new MySqlDataAdapter();
+                MyAdapter.SelectCommand = cmd;
+                DataTable dTable = new DataTable();
+                MyAdapter.Fill(dTable);
+                dataGridView1.DataSource = dTable;
             }
             catch (Exception ex)
             {
