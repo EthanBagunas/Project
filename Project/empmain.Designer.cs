@@ -51,7 +51,7 @@
             transact.FlatAppearance.BorderColor = Color.Cyan;
             transact.FlatStyle = FlatStyle.Popup;
             transact.Font = new Font("Verdana", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            transact.Location = new Point(304, 90);
+            transact.Location = new Point(350, 175);
             transact.Name = "transact";
             transact.Size = new Size(197, 38);
             transact.TabIndex = 0;
@@ -66,7 +66,7 @@
             reserve.FlatAppearance.BorderColor = Color.Cyan;
             reserve.FlatStyle = FlatStyle.Popup;
             reserve.Font = new Font("Verdana", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            reserve.Location = new Point(304, 206);
+            reserve.Location = new Point(350, 291);
             reserve.Margin = new Padding(3, 4, 3, 4);
             reserve.Name = "reserve";
             reserve.Size = new Size(197, 38);
@@ -82,7 +82,7 @@
             customer.FlatAppearance.BorderColor = Color.Cyan;
             customer.FlatStyle = FlatStyle.Popup;
             customer.Font = new Font("Verdana", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            customer.Location = new Point(304, 331);
+            customer.Location = new Point(350, 416);
             customer.Margin = new Padding(3, 4, 3, 4);
             customer.Name = "customer";
             customer.Size = new Size(197, 38);
@@ -93,14 +93,14 @@
             // 
             // monthCalendar1
             // 
-            monthCalendar1.Location = new Point(687, 90);
+            monthCalendar1.Location = new Point(682, 206);
             monthCalendar1.Name = "monthCalendar1";
             monthCalendar1.TabIndex = 5;
             // 
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(179, 331);
+            pictureBox2.Location = new Point(225, 416);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(100, 100);
             pictureBox2.TabIndex = 7;
@@ -110,7 +110,7 @@
             // pictureBox3
             // 
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(179, 206);
+            pictureBox3.Location = new Point(225, 291);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(100, 100);
             pictureBox3.TabIndex = 8;
@@ -119,7 +119,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(179, 90);
+            pictureBox1.Location = new Point(225, 175);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(100, 100);
             pictureBox1.TabIndex = 9;
@@ -128,7 +128,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(788, 61);
+            label1.Location = new Point(779, 166);
             label1.Name = "label1";
             label1.Size = new Size(79, 20);
             label1.TabIndex = 10;
@@ -139,7 +139,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
+            BackColor = Color.Khaki;
             BackgroundImageLayout = ImageLayout.Center;
             ClientSize = new Size(1182, 628);
             Controls.Add(label1);
