@@ -20,7 +20,8 @@ namespace Project
 
         private void Form2_Load(object sender, EventArgs e)
         {
-
+            label1.Text = TimeOnly.FromDateTime(DateTime.Now).ToString();
+            timer1.Enabled = true;
         }
 
         private void transact_Click(object sender, EventArgs e)
@@ -50,6 +51,11 @@ namespace Project
         {
             Reservations rsrv = new Reservations();
             rsrv.Show();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

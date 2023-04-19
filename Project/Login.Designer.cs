@@ -33,6 +33,7 @@
             textBox1 = new TextBox();
             textBox2 = new TextBox();
             login1 = new Button();
+            checkBox1 = new CheckBox();
             SuspendLayout();
             // 
             // user
@@ -80,12 +81,23 @@
             login1.UseVisualStyleBackColor = true;
             login1.Click += login1_Click;
             // 
+            // checkBox1
+            // 
+            checkBox1.AutoSize = true;
+            checkBox1.Location = new Point(331, 34);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(73, 24);
+            checkBox1.TabIndex = 5;
+            checkBox1.Text = "admin";
+            checkBox1.UseVisualStyleBackColor = true;
+            // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Wheat;
             ClientSize = new Size(800, 450);
+            Controls.Add(checkBox1);
             Controls.Add(login1);
             Controls.Add(textBox2);
             Controls.Add(user);
@@ -107,5 +119,6 @@
         private TextBox textBox2;
         private Button login;
         private Button login1;
+        private CheckBox checkBox1;
     }
 }

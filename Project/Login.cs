@@ -19,50 +19,56 @@ namespace Project
 
         }
 
-       
+
 
         private void login1_Click(object sender, EventArgs e)
         {
             //Transactions transactions = new Transactions();
             //transactions.Show();
 
-            empmain emp= new empmain();
-            emp.Show();
-            /*
-            string query = "SELECT * FROM employee WHERE empname=@username AND emppass=@password";
-
-            MySqlConnection conn = new MySqlConnection(connectionString);
-            MySqlCommand command = new MySqlCommand(query, conn);
-
-            conn.Open();
-            command.Parameters.AddWithValue("@username", textBox1.Text);
-            command.Parameters.AddWithValue("@password", textBox2.Text);
-
-
-            MySqlDataReader reader = command.ExecuteReader();
-
-            if (reader.HasRows)
+            if (checkBox1.Checked && textBox2.Text.Contains("admin"))
             {
-
-                textBox1.Clear();
-                textBox2.Clear();
-
-                this.Hide();
-                empmain form2 = new empmain();
-                form2.Show();
+                admin admin = new admin();
+                admin.Show();
             }
             else
             {
-                MessageBox.Show("Error");
-                textBox1.Clear();
-                textBox2.Clear();
+
+                string query = "SELECT * FROM employee WHERE empname=@username AND emppass=@password";
+
+                MySqlConnection conn = new MySqlConnection(connectionString);
+                MySqlCommand command = new MySqlCommand(query, conn);
+
+                conn.Open();
+                command.Parameters.AddWithValue("@username", textBox1.Text);
+                command.Parameters.AddWithValue("@password", textBox2.Text);
+
+
+                MySqlDataReader reader = command.ExecuteReader();
+
+                if (reader.HasRows)
+                {
+
+                    textBox1.Clear();
+                    textBox2.Clear();
+
+                    this.Hide();
+                    empmain form2 = new empmain();
+                    form2.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Error");
+                    textBox1.Clear();
+                    textBox2.Clear();
+                }
+                conn.Close();
             }
-            conn.Close();*/
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
-            
+
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)

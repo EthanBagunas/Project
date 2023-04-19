@@ -61,7 +61,7 @@
   <data name="pictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wgAADsIBFShKgAAACr9JREFUeF7tnXeoNUcZxq+9dyN2EytoVIzYCypqMNhRUTH2KEo0dkVRsaFisGBJ
+        vAAADrwBlbxySQAACr9JREFUeF7tnXeoNUcZxq+9dyN2EytoVIzYCypqMNhRUTH2KEo0dkVRsaFisGBJ
         bFjA3sWGWGKL3WgkDayx997r87vc+XjyfrM7s+fsOWe+e+eB3x9nd2d2d549s7Oz78xudXV1rUjnEQ8S
         HxbfFd8SrxDXEcvoUPFy8U1Bvh8VDxXnFYuKtORBXuRJ3i8T1xLL6LrilYJzJ1/KgjKhbNaqg8XJ4n8Z
         /i2eIc4mpojtnyr+JXL5niKuIqbqquJUkcuTfT1ZTD3Ws4tnCc41ly8GXUmsRRcR3xG5A3EeL6boUSKX
@@ -113,7 +113,7 @@
   <data name="pictureBox3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wAAADsABataJCQAAB3lJREFUeF7tnVeo7UQUho8Ne+9d7B0riAV98VqxIBYQxIb6YkGxIogNfRBUUCwv
+        vAAADrwBlbxySQAAB3lJREFUeF7tnVeo7UQUho8Ne+9d7B0riAV98VqxIBYQxIb6YkGxIogNfRBUUCwv
         iqKioFdEsYHYK1hQUSzY0WsvYG//tyGXnNw1mczs5J6556wfvpfszMpk/p1kMi0TPWtNcb/4XXwiThC5
         2lY8K/4Sb4pZIlekfUv8KZ4WW4tcnSg4N87xPrGGKFILi+fFfzX+FfuJVC0nvhT1WL+KjUSqNhUUXj3W
         Z2JJkar9BedUj4XBC4nitIGoZ7TiNpGqA4QV61yRKtJYsXL+KLeLZhwM4s5QnLgNNDMLs0WqjhJWrEtF
@@ -151,7 +151,7 @@
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wQAADsEBuJFr7QAAFEZJREFUeF7tnQlcVVUex5N9EwRBWUQBUUFAAQUB2ZRVWUTFLXOpCNPSSbPMKZfc
+        vAAADrwBlbxySQAAFEZJREFUeF7tnQlcVVUex5N9EwRBWUQBUUFAAQUB2ZRVWUTFLXOpCNPSSbPMKZfc
         TTNNFM0mzWxzJk0tK8eWyRYr0zSXmpzStJqmfXcp//P/HbiXc987LCKIvN7/8/l+xHfOufec/++d9d5z
         3lVWU1p75jnmZ+Yv+MBqNZsDE8wkMilMTwZOdGZaMPU1D2Y68yNDlVxgbmasZmJwdDKzmfme0Rwm8xtz
         knmGWcCMYiCWNwMRTc2WQVg/Zg1T3XV/Z7IZq1VaS2YTg2+rymG18QfzA3OCOcC8wxxlvmHgbLM0nq08
@@ -241,4 +241,10 @@
         rkJggg==
 </value>
   </data>
+  <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>25</value>
+  </metadata>
 </root>
