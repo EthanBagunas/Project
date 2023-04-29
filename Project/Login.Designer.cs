@@ -28,18 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             user = new Label();
             pass = new Label();
             textBox1 = new TextBox();
             textBox2 = new TextBox();
             login1 = new Button();
             checkBox1 = new CheckBox();
+            pictureBox1 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // user
             // 
+            user.Anchor = AnchorStyles.None;
             user.AutoSize = true;
-            user.Location = new Point(177, 94);
+            user.Location = new Point(231, 245);
             user.Name = "user";
             user.Size = new Size(78, 20);
             user.TabIndex = 0;
@@ -47,8 +51,9 @@
             // 
             // pass
             // 
+            pass.Anchor = AnchorStyles.None;
             pass.AutoSize = true;
-            pass.Location = new Point(182, 164);
+            pass.Location = new Point(231, 297);
             pass.Name = "pass";
             pass.Size = new Size(73, 20);
             pass.TabIndex = 1;
@@ -56,24 +61,29 @@
             // 
             // textBox1
             // 
+            textBox1.Anchor = AnchorStyles.None;
             textBox1.BorderStyle = BorderStyle.FixedSingle;
-            textBox1.Location = new Point(261, 91);
+            textBox1.Location = new Point(310, 245);
             textBox1.Name = "textBox1";
             textBox1.ScrollBars = ScrollBars.Horizontal;
             textBox1.Size = new Size(221, 27);
             textBox1.TabIndex = 2;
+            textBox1.TextChanged += textBox1_TextChanged;
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(261, 161);
+            textBox2.Anchor = AnchorStyles.None;
+            textBox2.Location = new Point(310, 292);
             textBox2.Name = "textBox2";
+            textBox2.PasswordChar = '*';
             textBox2.Size = new Size(221, 27);
             textBox2.TabIndex = 3;
             textBox2.TextChanged += textBox2_TextChanged;
             // 
             // login1
             // 
-            login1.Location = new Point(272, 283);
+            login1.Anchor = AnchorStyles.None;
+            login1.Location = new Point(367, 370);
             login1.Name = "login1";
             login1.Size = new Size(94, 29);
             login1.TabIndex = 4;
@@ -83,13 +93,24 @@
             // 
             // checkBox1
             // 
+            checkBox1.Anchor = AnchorStyles.None;
             checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(331, 34);
+            checkBox1.Location = new Point(377, 215);
             checkBox1.Name = "checkBox1";
             checkBox1.Size = new Size(73, 24);
             checkBox1.TabIndex = 5;
             checkBox1.Text = "admin";
             checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.InitialImage = (Image)resources.GetObject("pictureBox1.InitialImage");
+            pictureBox1.Location = new Point(340, 43);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(150, 150);
+            pictureBox1.TabIndex = 6;
+            pictureBox1.TabStop = false;
             // 
             // Login
             // 
@@ -97,6 +118,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Wheat;
             ClientSize = new Size(800, 450);
+            Controls.Add(pictureBox1);
             Controls.Add(checkBox1);
             Controls.Add(login1);
             Controls.Add(textBox2);
@@ -107,6 +129,7 @@
             Text = "Form1";
             Load += Form1_Load;
             KeyDown += Form1_KeyDown;
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -120,5 +143,6 @@
         private Button login;
         private Button login1;
         private CheckBox checkBox1;
+        private PictureBox pictureBox1;
     }
 }

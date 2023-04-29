@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Net.NetworkInformation;
+using System.Reflection.PortableExecutable;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -46,7 +47,7 @@ namespace Project
             try
             {
 
-                string Query = "select * from reservations;";
+                string Query = "SELECT * FROM reservations ORDER BY check_in ASC;\r\n";
                 MySqlConnection myconn = new MySqlConnection(conn);
                 MySqlCommand cmd = new MySqlCommand(Query, myconn);
 
@@ -100,26 +101,25 @@ namespace Project
 
             DateTime outDateTime = inDateTime.AddDays(days);
             string outDate = outDateTime.ToString("yyyy-MM-dd");
-
-
-            try
+            try 
             {
-                string Query = "insert into reservations(cus_id,room_id,check_in,check_out,res_date,res_time) values('" + this.textBox2.Text + "','" + room + "','" + inDate + "','" + outDate + "','" + currentDate + "','" + currentTime + "');UPDATE rooms SET Status = 'RESERVED' WHERE rooms_id = '" + room + "';";
+            string Query = "insert into reservations(cus_id,room_id,check_in,check_out,res_date,res_time) values('" + this.textBox2.Text + "','" + room + "','" + inDate + "','" + outDate + "','" + currentDate + "','" + currentTime + "');";
                 MySqlConnection myconn = new MySqlConnection(conn);
-                MySqlCommand MyCommand1 = new MySqlCommand(Query, myconn);
+                MySqlCommand MyCommand2 = new MySqlCommand(Query, myconn);
                 MySqlDataReader MyReader2;
                 myconn.Open();
-                MyReader2 = MyCommand1.ExecuteReader();
-
+                MyReader2 = MyCommand2.ExecuteReader();
                 while (MyReader2.Read())
                 {
                 }
                 myconn.Close();
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+
         }
 
         private void room_Click(object sender, EventArgs e)
@@ -141,6 +141,11 @@ namespace Project
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

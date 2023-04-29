@@ -25,7 +25,10 @@ namespace Project
         {
             //Transactions transactions = new Transactions();
             //transactions.Show();
-
+            /*
+            empmain empmain = new empmain();
+            empmain.Show();
+            */
             if (checkBox1.Checked && textBox2.Text.Contains("admin"))
             {
                 admin admin = new admin();
@@ -81,6 +84,9 @@ namespace Project
 
         }
 
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
 
+        }
     }
 }

@@ -56,7 +56,7 @@
             // 
             // load
             // 
-            load.Location = new Point(43, 380);
+            load.Location = new Point(781, 171);
             load.Name = "load";
             load.Size = new Size(94, 29);
             load.TabIndex = 8;
@@ -66,7 +66,7 @@
             // 
             // delete
             // 
-            delete.Location = new Point(182, 380);
+            delete.Location = new Point(920, 171);
             delete.Name = "delete";
             delete.Size = new Size(94, 29);
             delete.TabIndex = 10;
@@ -77,13 +77,13 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(394, 21);
+            dataGridView1.Location = new Point(12, 237);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.RowTemplate.Height = 29;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(706, 397);
+            dataGridView1.Size = new Size(1067, 173);
             dataGridView1.TabIndex = 12;
             // 
             // dateTimePicker1
@@ -98,7 +98,7 @@
             // 
             // newcus
             // 
-            newcus.Location = new Point(43, 285);
+            newcus.Location = new Point(781, 76);
             newcus.Name = "newcus";
             newcus.Size = new Size(233, 29);
             newcus.TabIndex = 19;
@@ -123,6 +123,7 @@
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(196, 28);
             comboBox1.TabIndex = 22;
+            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // textBox2
             // 
@@ -142,7 +143,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(43, 230);
+            button1.Location = new Point(781, 21);
             button1.Name = "button1";
             button1.Size = new Size(233, 29);
             button1.TabIndex = 24;
@@ -168,7 +169,7 @@
             // 
             // insert
             // 
-            insert.Location = new Point(43, 331);
+            insert.Location = new Point(781, 122);
             insert.Name = "insert";
             insert.Size = new Size(233, 29);
             insert.TabIndex = 9;
