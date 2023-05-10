@@ -52,18 +52,22 @@ namespace Project
 
             try
             {
-                string Query = "update rooms set status='" + selectedText + "' where rooms_id=@id";
-                MySqlConnection MyConn2 = new MySqlConnection(conn);
-                MySqlCommand MyCommand2 = new MySqlCommand(Query, MyConn2);
-                MyCommand2.Parameters.AddWithValue("@id", dataGridView1.CurrentRow.Cells[0].Value);
-                MySqlDataReader MyReader2;
-                MyConn2.Open();
-                MyReader2 = MyCommand2.ExecuteReader();
-
-                while (MyReader2.Read())
+                if (updatebox.SelectedItem.ToString() == "chechin")
                 {
+
+                    string Query = "update rooms set status='" "' where rooms_id=@id";
+                    MySqlConnection MyConn2 = new MySqlConnection(conn);
+                    MySqlCommand MyCommand2 = new MySqlCommand(Query, MyConn2);
+                    MyCommand2.Parameters.AddWithValue("@id", dataGridView1.CurrentRow.Cells[0].Value);
+                    MySqlDataReader MyReader2;
+                    MyConn2.Open();
+                    MyReader2 = MyCommand2.ExecuteReader();
+
+                    while (MyReader2.Read())
+                    {
+                    }
+                    MyConn2.Close();
                 }
-                MyConn2.Close();
             }
             catch (Exception ex)
             {

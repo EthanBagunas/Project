@@ -32,7 +32,8 @@
             status = new Button();
             button4 = new Button();
             Update = new Label();
-            updatebox = new ComboBox();
+            button1 = new Button();
+            textBox1 = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -50,7 +51,7 @@
             // 
             // status
             // 
-            status.Location = new Point(200, 89);
+            status.Location = new Point(235, 105);
             status.Name = "status";
             status.Size = new Size(197, 29);
             status.TabIndex = 2;
@@ -60,11 +61,11 @@
             // 
             // button4
             // 
-            button4.Location = new Point(83, 89);
+            button4.Location = new Point(100, 89);
             button4.Name = "button4";
             button4.Size = new Size(94, 29);
             button4.TabIndex = 5;
-            button4.Text = "Update";
+            button4.Text = "Check In";
             button4.UseVisualStyleBackColor = true;
             button4.Click += button4_Click;
             // 
@@ -73,25 +74,33 @@
             Update.AutoSize = true;
             Update.Location = new Point(83, 38);
             Update.Name = "Update";
-            Update.Size = new Size(58, 20);
+            Update.Size = new Size(94, 20);
             Update.TabIndex = 6;
-            Update.Text = "Update";
+            Update.Text = "Customer ID:";
             // 
-            // updatebox
+            // button1
             // 
-            updatebox.FormattingEnabled = true;
-            updatebox.Items.AddRange(new object[] { "OPEN", "RESERVED", "OCCUPIED" });
-            updatebox.Location = new Point(200, 35);
-            updatebox.Name = "updatebox";
-            updatebox.Size = new Size(197, 28);
-            updatebox.TabIndex = 7;
+            button1.Location = new Point(447, 89);
+            button1.Name = "button1";
+            button1.Size = new Size(94, 29);
+            button1.TabIndex = 8;
+            button1.Text = "Check-out";
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(183, 31);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(249, 27);
+            textBox1.TabIndex = 9;
             // 
             // checkin
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(914, 600);
-            Controls.Add(updatebox);
+            Controls.Add(textBox1);
+            Controls.Add(button1);
             Controls.Add(Update);
             Controls.Add(button4);
             Controls.Add(status);
@@ -109,6 +118,7 @@
         private Button status;
         private Button button4;
         private Label Update;
-        private ComboBox updatebox;
+        private Button button1;
+        private TextBox textBox1;
     }
 }

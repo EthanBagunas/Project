@@ -42,6 +42,8 @@
             daytext = new TextBox();
             label1 = new Label();
             insert = new Button();
+            price = new Label();
+            textBox1 = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -56,7 +58,7 @@
             // 
             // load
             // 
-            load.Location = new Point(781, 171);
+            load.Location = new Point(57, 405);
             load.Name = "load";
             load.Size = new Size(94, 29);
             load.TabIndex = 8;
@@ -66,7 +68,7 @@
             // 
             // delete
             // 
-            delete.Location = new Point(920, 171);
+            delete.Location = new Point(196, 405);
             delete.Name = "delete";
             delete.Size = new Size(94, 29);
             delete.TabIndex = 10;
@@ -77,13 +79,13 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(12, 237);
+            dataGridView1.Location = new Point(370, 18);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.RowTemplate.Height = 29;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(1067, 173);
+            dataGridView1.Size = new Size(720, 394);
             dataGridView1.TabIndex = 12;
             // 
             // dateTimePicker1
@@ -98,7 +100,7 @@
             // 
             // newcus
             // 
-            newcus.Location = new Point(781, 76);
+            newcus.Location = new Point(57, 306);
             newcus.Name = "newcus";
             newcus.Size = new Size(233, 29);
             newcus.TabIndex = 19;
@@ -131,6 +133,7 @@
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(196, 27);
             textBox2.TabIndex = 21;
+            textBox2.TextChanged += textBox2_TextChanged;
             // 
             // amount
             // 
@@ -143,7 +146,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(781, 21);
+            button1.Location = new Point(57, 262);
             button1.Name = "button1";
             button1.Size = new Size(233, 29);
             button1.TabIndex = 24;
@@ -169,7 +172,7 @@
             // 
             // insert
             // 
-            insert.Location = new Point(781, 122);
+            insert.Location = new Point(57, 356);
             insert.Name = "insert";
             insert.Size = new Size(233, 29);
             insert.TabIndex = 9;
@@ -177,11 +180,29 @@
             insert.UseVisualStyleBackColor = true;
             insert.Click += reserve_Click;
             // 
+            // price
+            // 
+            price.AutoSize = true;
+            price.Location = new Point(23, 218);
+            price.Name = "price";
+            price.Size = new Size(62, 20);
+            price.TabIndex = 27;
+            price.Text = "Amount";
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(156, 217);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(189, 27);
+            textBox1.TabIndex = 28;
+            // 
             // Reservations
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1121, 450);
+            Controls.Add(textBox1);
+            Controls.Add(price);
             Controls.Add(label1);
             Controls.Add(daytext);
             Controls.Add(button1);
@@ -218,5 +239,7 @@
         private TextBox daytext;
         private Label label1;
         private Button insert;
+        private Label price;
+        private TextBox textBox1;
     }
 }

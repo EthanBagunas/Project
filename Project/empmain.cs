@@ -57,5 +57,11 @@ namespace Project
         {
 
         }
+
+        private void trans_Click(object sender, EventArgs e)
+        {
+            Transactions transactions = new Transactions();
+            transactions.Show();    
+        }
     }
 }

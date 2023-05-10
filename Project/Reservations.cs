@@ -47,7 +47,7 @@ namespace Project
             try
             {
 
-                string Query = "SELECT * FROM reservations ORDER BY check_in ASC;\r\n";
+                string Query = "SELECT * FROM reservations ORDER BY room_id ASC, check_in ASC;\r\n";
                 MySqlConnection myconn = new MySqlConnection(conn);
                 MySqlCommand cmd = new MySqlCommand(Query, myconn);
 
@@ -80,6 +80,7 @@ namespace Project
                 {
                 }
                 MyConn2.Close();
+
             }
             catch (Exception ex)
             {
@@ -101,9 +102,9 @@ namespace Project
 
             DateTime outDateTime = inDateTime.AddDays(days);
             string outDate = outDateTime.ToString("yyyy-MM-dd");
-            try 
+            try
             {
-            string Query = "insert into reservations(cus_id,room_id,check_in,check_out,res_date,res_time) values('" + this.textBox2.Text + "','" + room + "','" + inDate + "','" + outDate + "','" + currentDate + "','" + currentTime + "');";
+                string Query = "insert into reservations(cus_id,room_id,check_in,check_out,res_date,res_time) values('" + this.textBox2.Text + "','" + room + "','" + inDate + "','" + outDate + "','" + currentDate + "','" + currentTime + "');";
                 MySqlConnection myconn = new MySqlConnection(conn);
                 MySqlCommand MyCommand2 = new MySqlCommand(Query, myconn);
                 MySqlDataReader MyReader2;
@@ -113,6 +114,26 @@ namespace Project
                 {
                 }
                 myconn.Close();
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            try
+            {
+                string Query = "insert into transactions (transaction_date,transaction_type,customer,amount,status) values('" + currentDate + "',' Reservation ','" + textBox2.Text + "','"+ textBox1.Text +"',' PENDING');" ;
+                MySqlConnection myconn = new MySqlConnection(conn);
+                MySqlCommand MyCommand = new MySqlCommand(Query, myconn);
+                MySqlDataReader MyReader;
+                myconn.Open();
+                MyReader = MyCommand.ExecuteReader();
+                while (MyReader.Read())
+                {
+                }
+                myconn.Close();
+
 
             }
             catch (Exception ex)
@@ -147,5 +168,12 @@ namespace Project
         {
 
         }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+       
     }
 }

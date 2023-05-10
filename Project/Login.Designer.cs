@@ -34,8 +34,8 @@
             textBox1 = new TextBox();
             textBox2 = new TextBox();
             login1 = new Button();
-            checkBox1 = new CheckBox();
             pictureBox1 = new PictureBox();
+            checkBox1 = new CheckBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -75,9 +75,9 @@
             textBox2.Anchor = AnchorStyles.None;
             textBox2.Location = new Point(310, 292);
             textBox2.Name = "textBox2";
-            textBox2.PasswordChar = '*';
             textBox2.Size = new Size(221, 27);
             textBox2.TabIndex = 3;
+            textBox2.UseSystemPasswordChar = true;
             textBox2.TextChanged += textBox2_TextChanged;
             // 
             // login1
@@ -91,17 +91,6 @@
             login1.UseVisualStyleBackColor = true;
             login1.Click += login1_Click;
             // 
-            // checkBox1
-            // 
-            checkBox1.Anchor = AnchorStyles.None;
-            checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(377, 215);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(73, 24);
-            checkBox1.TabIndex = 5;
-            checkBox1.Text = "admin";
-            checkBox1.UseVisualStyleBackColor = true;
-            // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
@@ -112,14 +101,25 @@
             pictureBox1.TabIndex = 6;
             pictureBox1.TabStop = false;
             // 
+            // checkBox1
+            // 
+            checkBox1.AutoSize = true;
+            checkBox1.Location = new Point(340, 340);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(132, 24);
+            checkBox1.TabIndex = 7;
+            checkBox1.Text = "show password";
+            checkBox1.UseVisualStyleBackColor = true;
+            checkBox1.CheckedChanged += checkBox1_CheckedChanged;
+            // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Wheat;
             ClientSize = new Size(800, 450);
-            Controls.Add(pictureBox1);
             Controls.Add(checkBox1);
+            Controls.Add(pictureBox1);
             Controls.Add(login1);
             Controls.Add(textBox2);
             Controls.Add(user);
@@ -142,7 +142,7 @@
         private TextBox textBox2;
         private Button login;
         private Button login1;
-        private CheckBox checkBox1;
         private PictureBox pictureBox1;
+        private CheckBox checkBox1;
     }
 }

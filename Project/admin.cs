@@ -61,5 +61,27 @@ namespace Project
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void Reservation_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                string Query = "select * from reservations;";
+                MySqlConnection myconn = new MySqlConnection(conn);
+                MySqlCommand cmd = new MySqlCommand(Query, myconn);
+
+                MySqlDataAdapter MyAdapter = new MySqlDataAdapter();
+                MyAdapter.SelectCommand = cmd;
+                DataTable dTable = new DataTable();
+                MyAdapter.Fill(dTable);
+                dataGridView1.DataSource = dTable;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+
+            }
+        }
     }
 }
