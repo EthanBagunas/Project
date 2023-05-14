@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using MySqlX.XDevAPI.Relational;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,15 +21,18 @@ namespace Project
             InitializeComponent();
         }
 
-        private void customer_Click(object sender, EventArgs e)
+
+
+
+        private void Load_Click(object sender, EventArgs e)
         {
             try
             {
-
-                string Query = "select * from customer;";
+                string table1 = comboBox1.SelectedItem.ToString();
+                string Query = "SELECT * FROM " + table1;
                 MySqlConnection myconn = new MySqlConnection(conn);
                 MySqlCommand cmd = new MySqlCommand(Query, myconn);
-
+                cmd.Parameters.AddWithValue("@select", comboBox1.SelectedItem.ToString);
                 MySqlDataAdapter MyAdapter = new MySqlDataAdapter();
                 MyAdapter.SelectCommand = cmd;
                 DataTable dTable = new DataTable();
@@ -41,47 +45,35 @@ namespace Project
             }
         }
 
-        private void room_Click(object sender, EventArgs e)
+        private void update_Click(object sender, EventArgs e)
         {
-            try
-            {
+            string table2 = comboBox1.SelectedItem.ToString();
+            string query = "Select" + table2;
+            MySqlConnection myconn = new MySqlConnection(conn);
+            MySqlCommand command = new MySqlCommand(query, myconn);
+            MySqlDataAdapter adapter = new MySqlDataAdapter(command);
 
-                string Query = "select * from rooms;";
-                MySqlConnection myconn = new MySqlConnection(conn);
-                MySqlCommand cmd = new MySqlCommand(Query, myconn);
+            // create a DataTable and fill it with data from the database
+            DataTable table = new DataTable();
+            adapter.Fill(table);
 
-                MySqlDataAdapter MyAdapter = new MySqlDataAdapter();
-                MyAdapter.SelectCommand = cmd;
-                DataTable dTable = new DataTable();
-                MyAdapter.Fill(dTable);
-                dataGridView1.DataSource = dTable;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+
+
+            // update the changes to the database using the data adapter
+            MySqlCommandBuilder builder = new MySqlCommandBuilder(adapter);
+            adapter.Update(table);
+
         }
 
-        private void Reservation_Click(object sender, EventArgs e)
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            try
-            {
 
-                string Query = "select * from reservations;";
-                MySqlConnection myconn = new MySqlConnection(conn);
-                MySqlCommand cmd = new MySqlCommand(Query, myconn);
+        }
 
-                MySqlDataAdapter MyAdapter = new MySqlDataAdapter();
-                MyAdapter.SelectCommand = cmd;
-                DataTable dTable = new DataTable();
-                MyAdapter.Fill(dTable);
-                dataGridView1.DataSource = dTable;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-
-            }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            admincus admincus = new admincus();
+            admincus.Show();
         }
     }
 }

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Project
 {
-    public partial class Receipt : Form
+    public partial class ademp : Form
     {
-        public Receipt()
+        public ademp()
         {
             InitializeComponent();
         }

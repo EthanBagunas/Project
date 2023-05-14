@@ -28,22 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Customers = new Button();
             dataGridView1 = new DataGridView();
-            room = new Button();
-            Reservation = new Button();
+            Load = new Button();
+            comboBox1 = new ComboBox();
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
-            // 
-            // Customers
-            // 
-            Customers.Location = new Point(199, 360);
-            Customers.Name = "Customers";
-            Customers.Size = new Size(150, 55);
-            Customers.TabIndex = 0;
-            Customers.Text = "Customers";
-            Customers.UseVisualStyleBackColor = true;
-            Customers.Click += customer_Click;
             // 
             // dataGridView1
             // 
@@ -52,38 +42,49 @@
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.RowTemplate.Height = 29;
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.Size = new Size(756, 329);
             dataGridView1.TabIndex = 1;
             // 
-            // room
+            // Load
             // 
-            room.Location = new Point(29, 360);
-            room.Name = "room";
-            room.Size = new Size(150, 55);
-            room.TabIndex = 2;
-            room.Text = "Rooms";
-            room.UseVisualStyleBackColor = true;
-            room.Click += room_Click;
+            Load.Location = new Point(12, 409);
+            Load.Name = "Load";
+            Load.Size = new Size(94, 29);
+            Load.TabIndex = 2;
+            Load.Text = "Load";
+            Load.UseVisualStyleBackColor = true;
+            Load.Click += Load_Click;
             // 
-            // Reservation
+            // comboBox1
             // 
-            Reservation.Location = new Point(390, 360);
-            Reservation.Name = "Reservation";
-            Reservation.Size = new Size(150, 55);
-            Reservation.TabIndex = 3;
-            Reservation.Text = "Reservations";
-            Reservation.UseVisualStyleBackColor = true;
-            Reservation.Click += Reservation_Click;
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "customer", "reservations", "rooms", "transactions" });
+            comboBox1.Location = new Point(12, 358);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(151, 28);
+            comboBox1.TabIndex = 3;
+            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(462, 383);
+            button1.Name = "button1";
+            button1.Size = new Size(94, 29);
+            button1.TabIndex = 4;
+            button1.Text = "Update";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // admin
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(Reservation);
-            Controls.Add(room);
+            Controls.Add(button1);
+            Controls.Add(comboBox1);
+            Controls.Add(Load);
             Controls.Add(dataGridView1);
-            Controls.Add(Customers);
             Name = "admin";
             Text = "admin";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
@@ -91,10 +92,9 @@
         }
 
         #endregion
-
-        private Button Customers;
-        private DataGridView dataGridView1;
-        private Button room;
-        private Button Reservation;
+        private Button Load;
+        private ComboBox comboBox1;
+        private Button button1;
+        public DataGridView dataGridView1;
     }
 }

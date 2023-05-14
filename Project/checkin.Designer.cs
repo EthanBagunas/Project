@@ -34,6 +34,7 @@
             Update = new Label();
             button1 = new Button();
             textBox1 = new TextBox();
+            button2 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -51,9 +52,9 @@
             // 
             // status
             // 
-            status.Location = new Point(235, 105);
+            status.Location = new Point(486, 30);
             status.Name = "status";
-            status.Size = new Size(197, 29);
+            status.Size = new Size(233, 29);
             status.TabIndex = 2;
             status.Text = "Room Status";
             status.UseVisualStyleBackColor = true;
@@ -61,7 +62,7 @@
             // 
             // button4
             // 
-            button4.Location = new Point(100, 89);
+            button4.Location = new Point(625, 90);
             button4.Name = "button4";
             button4.Size = new Size(94, 29);
             button4.TabIndex = 5;
@@ -80,12 +81,13 @@
             // 
             // button1
             // 
-            button1.Location = new Point(447, 89);
+            button1.Location = new Point(486, 90);
             button1.Name = "button1";
             button1.Size = new Size(94, 29);
             button1.TabIndex = 8;
             button1.Text = "Check-out";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click_1;
             // 
             // textBox1
             // 
@@ -94,11 +96,22 @@
             textBox1.Size = new Size(249, 27);
             textBox1.TabIndex = 9;
             // 
+            // button2
+            // 
+            button2.Location = new Point(83, 90);
+            button2.Name = "button2";
+            button2.Size = new Size(94, 29);
+            button2.TabIndex = 10;
+            button2.Text = "Customer list";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += cusload_click;
+            // 
             // checkin
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(914, 600);
+            Controls.Add(button2);
             Controls.Add(textBox1);
             Controls.Add(button1);
             Controls.Add(Update);
@@ -120,5 +133,6 @@
         private Label Update;
         private Button button1;
         private TextBox textBox1;
+        private Button button2;
     }
 }

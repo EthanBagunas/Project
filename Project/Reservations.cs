@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Design;
 using System.Linq;
 using System.Net.NetworkInformation;
 using System.Reflection.PortableExecutable;
@@ -18,6 +19,9 @@ namespace Project
     public partial class Reservations : Form
     {
         string conn = "server=localhost;user id=root; password=rootpass; database=hotel";
+        string currentDate = DateTime.Now.ToString("yyyy-MM-dd");
+        int x, y, z, a;
+
 
 
         public Reservations()
@@ -65,13 +69,20 @@ namespace Project
 
         private void delete_Click(object sender, EventArgs e)
         {
+            x = int.Parse(amountbox.Text.ToString());
+            y = int.Parse(daytext.Text.ToString());
+            z = (x * y) / 10;
+
             try
             {
 
-                string Query = "DELETE FROM reservations WHERE res_id = @id;";
+                string Query = "DELETE FROM reservations WHERE res_id = @id; INSERT into transactions(transaction_date,transaction_type,customer,amount,status) values('" + currentDate + "', 'CANCELLATION', @cus, @amount, 'PENDING')";
                 MySqlConnection MyConn2 = new MySqlConnection(conn);
                 MySqlCommand MyCommand2 = new MySqlCommand(Query, MyConn2);
                 MyCommand2.Parameters.AddWithValue("@id", dataGridView1.CurrentRow.Cells[0].Value);
+                MyCommand2.Parameters.AddWithValue("@amount", z);
+                MyCommand2.Parameters.AddWithValue("@cus", textBox2.Text);
+
                 MySqlDataReader MyReader2;
                 MyConn2.Open();
                 MyReader2 = MyCommand2.ExecuteReader();
@@ -93,7 +104,7 @@ namespace Project
 
             string room = comboBox1.SelectedItem.ToString();
             string currentTime = DateTime.Now.ToString("hh:mm:ss");
-            string currentDate = DateTime.Now.ToString("yyyy-MM-dd");
+
 
             DateTime inDateTime = dateTimePicker1.Value;
             string inDate = inDateTime.ToString("yyyy-MM-dd");
@@ -123,9 +134,13 @@ namespace Project
             }
             try
             {
-                string Query = "insert into transactions (transaction_date,transaction_type,customer,amount,status) values('" + currentDate + "',' Reservation ','" + textBox2.Text + "','"+ textBox1.Text +"',' PENDING');" ;
+                x = int.Parse(amountbox.Text.ToString());
+                y = int.Parse(daytext.Text.ToString());
+                a = x * y;
+                string Query = "insert into transactions (transaction_date,transaction_type,customer,amount,status) values('" + currentDate + "',' RESERVATION ','" + textBox2.Text + "', @amount,'PENDING');";
                 MySqlConnection myconn = new MySqlConnection(conn);
                 MySqlCommand MyCommand = new MySqlCommand(Query, myconn);
+                MyCommand.Parameters.AddWithValue("@amount", a);
                 MySqlDataReader MyReader;
                 myconn.Open();
                 MyReader = MyCommand.ExecuteReader();
@@ -143,26 +158,7 @@ namespace Project
 
         }
 
-        private void room_Click(object sender, EventArgs e)
-        {
-            try
-            {
 
-                string Query = "select * from rooms;";
-                MySqlConnection myconn = new MySqlConnection(conn);
-                MySqlCommand cmd = new MySqlCommand(Query, myconn);
-
-                MySqlDataAdapter MyAdapter = new MySqlDataAdapter();
-                MyAdapter.SelectCommand = cmd;
-                DataTable dTable = new DataTable();
-                MyAdapter.Fill(dTable);
-                dataGridView1.DataSource = dTable;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -174,6 +170,32 @@ namespace Project
 
         }
 
-       
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                string Query = "SELECT * FROM customer WHERE Lastname = @name;";
+                MySqlConnection myconn = new MySqlConnection(conn);
+                MySqlCommand cmd = new MySqlCommand(Query, myconn);
+                cmd.Parameters.AddWithValue("@name", textBox1.Text);
+                MySqlDataAdapter MyAdapter = new MySqlDataAdapter();
+                MyAdapter.SelectCommand = cmd;
+                DataTable dTable = new DataTable();
+                MyAdapter.Fill(dTable);
+                dataGridView1.DataSource = dTable;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

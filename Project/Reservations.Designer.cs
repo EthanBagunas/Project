@@ -38,19 +38,20 @@
             comboBox1 = new ComboBox();
             textBox2 = new TextBox();
             amount = new Label();
-            button1 = new Button();
             daytext = new TextBox();
             label1 = new Label();
             insert = new Button();
             price = new Label();
+            amountbox = new TextBox();
             textBox1 = new TextBox();
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(23, 132);
+            label2.Location = new Point(23, 293);
             label2.Name = "label2";
             label2.Size = new Size(105, 20);
             label2.TabIndex = 1;
@@ -58,7 +59,7 @@
             // 
             // load
             // 
-            load.Location = new Point(57, 405);
+            load.Location = new Point(386, 405);
             load.Name = "load";
             load.Size = new Size(94, 29);
             load.TabIndex = 8;
@@ -68,41 +69,41 @@
             // 
             // delete
             // 
-            delete.Location = new Point(196, 405);
+            delete.Location = new Point(921, 405);
             delete.Name = "delete";
-            delete.Size = new Size(94, 29);
+            delete.Size = new Size(158, 29);
             delete.TabIndex = 10;
-            delete.Text = "Delete";
+            delete.Text = "Cancel Reservation";
             delete.UseVisualStyleBackColor = true;
             delete.Click += delete_Click;
             // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(370, 18);
+            dataGridView1.Location = new Point(386, 18);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.RowTemplate.Height = 29;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(720, 394);
+            dataGridView1.Size = new Size(693, 363);
             dataGridView1.TabIndex = 12;
             // 
             // dateTimePicker1
             // 
             dateTimePicker1.CustomFormat = "YYYY-MM-DD HH:MM:SS";
             dateTimePicker1.Format = DateTimePickerFormat.Custom;
-            dateTimePicker1.Location = new Point(154, 125);
+            dateTimePicker1.Location = new Point(149, 286);
             dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(191, 27);
+            dateTimePicker1.Size = new Size(196, 27);
             dateTimePicker1.TabIndex = 13;
             dateTimePicker1.ValueChanged += dateTimePicker1_ValueChanged;
             // 
             // newcus
             // 
-            newcus.Location = new Point(57, 306);
+            newcus.Location = new Point(104, 178);
             newcus.Name = "newcus";
-            newcus.Size = new Size(233, 29);
+            newcus.Size = new Size(144, 29);
             newcus.TabIndex = 19;
             newcus.Text = "New Customer";
             newcus.UseVisualStyleBackColor = true;
@@ -111,7 +112,7 @@
             // roomid
             // 
             roomid.AutoSize = true;
-            roomid.Location = new Point(23, 76);
+            roomid.Location = new Point(23, 237);
             roomid.Name = "roomid";
             roomid.Size = new Size(71, 20);
             roomid.TabIndex = 23;
@@ -121,7 +122,7 @@
             // 
             comboBox1.FormattingEnabled = true;
             comboBox1.Items.AddRange(new object[] { "301", "302", "303", "304", "305" });
-            comboBox1.Location = new Point(149, 76);
+            comboBox1.Location = new Point(149, 237);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(196, 28);
             comboBox1.TabIndex = 22;
@@ -129,7 +130,7 @@
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(149, 18);
+            textBox2.Location = new Point(149, 70);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(196, 27);
             textBox2.TabIndex = 21;
@@ -138,33 +139,23 @@
             // amount
             // 
             amount.AutoSize = true;
-            amount.Location = new Point(23, 21);
+            amount.Location = new Point(23, 73);
             amount.Name = "amount";
             amount.Size = new Size(94, 20);
             amount.TabIndex = 20;
             amount.Text = "Customer ID:";
             // 
-            // button1
-            // 
-            button1.Location = new Point(57, 262);
-            button1.Name = "button1";
-            button1.Size = new Size(233, 29);
-            button1.TabIndex = 24;
-            button1.Text = "Room Status";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += room_Click;
-            // 
             // daytext
             // 
-            daytext.Location = new Point(154, 171);
+            daytext.Location = new Point(149, 328);
             daytext.Name = "daytext";
-            daytext.Size = new Size(191, 27);
+            daytext.Size = new Size(196, 27);
             daytext.TabIndex = 25;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(23, 174);
+            label1.Location = new Point(23, 335);
             label1.Name = "label1";
             label1.Size = new Size(86, 20);
             label1.TabIndex = 26;
@@ -172,9 +163,9 @@
             // 
             // insert
             // 
-            insert.Location = new Point(57, 356);
+            insert.Location = new Point(770, 405);
             insert.Name = "insert";
-            insert.Size = new Size(233, 29);
+            insert.Size = new Size(131, 29);
             insert.TabIndex = 9;
             insert.Text = "Reserve";
             insert.UseVisualStyleBackColor = true;
@@ -183,29 +174,47 @@
             // price
             // 
             price.AutoSize = true;
-            price.Location = new Point(23, 218);
+            price.Location = new Point(23, 379);
             price.Name = "price";
             price.Size = new Size(62, 20);
             price.TabIndex = 27;
             price.Text = "Amount";
             // 
+            // amountbox
+            // 
+            amountbox.Location = new Point(149, 372);
+            amountbox.Name = "amountbox";
+            amountbox.Size = new Size(196, 27);
+            amountbox.TabIndex = 28;
+            // 
             // textBox1
             // 
-            textBox1.Location = new Point(156, 217);
+            textBox1.Location = new Point(23, 123);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(189, 27);
-            textBox1.TabIndex = 28;
+            textBox1.Size = new Size(207, 27);
+            textBox1.TabIndex = 30;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(236, 121);
+            button1.Name = "button1";
+            button1.Size = new Size(109, 29);
+            button1.TabIndex = 31;
+            button1.Text = "Search";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // Reservations
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1121, 450);
+            Controls.Add(button1);
             Controls.Add(textBox1);
+            Controls.Add(amountbox);
             Controls.Add(price);
             Controls.Add(label1);
             Controls.Add(daytext);
-            Controls.Add(button1);
             Controls.Add(roomid);
             Controls.Add(comboBox1);
             Controls.Add(textBox2);
@@ -235,11 +244,12 @@
         private ComboBox comboBox1;
         private TextBox textBox2;
         private Label amount;
-        private Button button1;
         private TextBox daytext;
         private Label label1;
         private Button insert;
         private Label price;
+        private TextBox amountbox;
         private TextBox textBox1;
+        private Button button1;
     }
 }

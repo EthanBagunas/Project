@@ -36,6 +36,7 @@
             login1 = new Button();
             pictureBox1 = new PictureBox();
             checkBox1 = new CheckBox();
+            backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -144,5 +145,6 @@
         private Button login1;
         private PictureBox pictureBox1;
         private CheckBox checkBox1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

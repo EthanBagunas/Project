@@ -25,9 +25,11 @@ namespace Project
         {
             //Transactions transactions = new Transactions();
             //transactions.Show();
-
+            
             empmain empmain = new empmain();
             empmain.Show();
+
+            
             /*
             if (textBox1.Text.Contains("admin") && textBox2.Text.Contains("admin"))
             {
