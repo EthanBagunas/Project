@@ -41,8 +41,6 @@
             daytext = new TextBox();
             label1 = new Label();
             insert = new Button();
-            price = new Label();
-            amountbox = new TextBox();
             textBox1 = new TextBox();
             button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -59,26 +57,29 @@
             // 
             // load
             // 
+            load.BackColor = Color.SandyBrown;
             load.Location = new Point(386, 405);
             load.Name = "load";
             load.Size = new Size(94, 29);
             load.TabIndex = 8;
             load.Text = "Load";
-            load.UseVisualStyleBackColor = true;
+            load.UseVisualStyleBackColor = false;
             load.Click += load_Click;
             // 
             // delete
             // 
+            delete.BackColor = Color.SandyBrown;
             delete.Location = new Point(921, 405);
             delete.Name = "delete";
             delete.Size = new Size(158, 29);
             delete.TabIndex = 10;
             delete.Text = "Cancel Reservation";
-            delete.UseVisualStyleBackColor = true;
+            delete.UseVisualStyleBackColor = false;
             delete.Click += delete_Click;
             // 
             // dataGridView1
             // 
+            dataGridView1.BackgroundColor = Color.SandyBrown;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(386, 18);
             dataGridView1.Name = "dataGridView1";
@@ -101,12 +102,13 @@
             // 
             // newcus
             // 
+            newcus.BackColor = Color.SandyBrown;
             newcus.Location = new Point(104, 178);
             newcus.Name = "newcus";
             newcus.Size = new Size(144, 29);
             newcus.TabIndex = 19;
             newcus.Text = "New Customer";
-            newcus.UseVisualStyleBackColor = true;
+            newcus.UseVisualStyleBackColor = false;
             newcus.Click += newcus_Click;
             // 
             // roomid
@@ -163,29 +165,14 @@
             // 
             // insert
             // 
+            insert.BackColor = Color.SandyBrown;
             insert.Location = new Point(770, 405);
             insert.Name = "insert";
             insert.Size = new Size(131, 29);
             insert.TabIndex = 9;
             insert.Text = "Reserve";
-            insert.UseVisualStyleBackColor = true;
+            insert.UseVisualStyleBackColor = false;
             insert.Click += reserve_Click;
-            // 
-            // price
-            // 
-            price.AutoSize = true;
-            price.Location = new Point(23, 379);
-            price.Name = "price";
-            price.Size = new Size(62, 20);
-            price.TabIndex = 27;
-            price.Text = "Amount";
-            // 
-            // amountbox
-            // 
-            amountbox.Location = new Point(149, 372);
-            amountbox.Name = "amountbox";
-            amountbox.Size = new Size(196, 27);
-            amountbox.TabIndex = 28;
             // 
             // textBox1
             // 
@@ -196,23 +183,23 @@
             // 
             // button1
             // 
+            button1.BackColor = Color.SandyBrown;
             button1.Location = new Point(236, 121);
             button1.Name = "button1";
             button1.Size = new Size(109, 29);
             button1.TabIndex = 31;
             button1.Text = "Search";
-            button1.UseVisualStyleBackColor = true;
+            button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
             // Reservations
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Khaki;
             ClientSize = new Size(1121, 450);
             Controls.Add(button1);
             Controls.Add(textBox1);
-            Controls.Add(amountbox);
-            Controls.Add(price);
             Controls.Add(label1);
             Controls.Add(daytext);
             Controls.Add(roomid);
@@ -247,8 +234,6 @@
         private TextBox daytext;
         private Label label1;
         private Button insert;
-        private Label price;
-        private TextBox amountbox;
         private TextBox textBox1;
         private Button button1;
     }

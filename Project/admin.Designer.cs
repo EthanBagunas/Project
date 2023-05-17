@@ -59,7 +59,7 @@
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "customer", "reservations", "rooms", "transactions" });
+            comboBox1.Items.AddRange(new object[] { "customer", "employee", "reservations", "rooms", "transactions" });
             comboBox1.Location = new Point(12, 358);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(151, 28);
@@ -68,9 +68,9 @@
             // 
             // button1
             // 
-            button1.Location = new Point(462, 383);
+            button1.Location = new Point(637, 370);
             button1.Name = "button1";
-            button1.Size = new Size(94, 29);
+            button1.Size = new Size(131, 51);
             button1.TabIndex = 4;
             button1.Text = "Update";
             button1.UseVisualStyleBackColor = true;

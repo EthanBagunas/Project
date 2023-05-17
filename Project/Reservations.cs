@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Design;
@@ -24,20 +25,18 @@ namespace Project
 
 
 
+
         public Reservations()
         {
             InitializeComponent();
         }
 
 
+
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
-
             dateTimePicker1.Format = DateTimePickerFormat.Custom;
             dateTimePicker1.CustomFormat = "ddd dd MMM yyyy";
-
-
-
         }
 
         private void newcus_Click(object sender, EventArgs e)
@@ -69,7 +68,7 @@ namespace Project
 
         private void delete_Click(object sender, EventArgs e)
         {
-            x = int.Parse(amountbox.Text.ToString());
+
             y = int.Parse(daytext.Text.ToString());
             z = (x * y) / 10;
 
@@ -104,8 +103,6 @@ namespace Project
 
             string room = comboBox1.SelectedItem.ToString();
             string currentTime = DateTime.Now.ToString("hh:mm:ss");
-
-
             DateTime inDateTime = dateTimePicker1.Value;
             string inDate = inDateTime.ToString("yyyy-MM-dd");
 
@@ -134,7 +131,6 @@ namespace Project
             }
             try
             {
-                x = int.Parse(amountbox.Text.ToString());
                 y = int.Parse(daytext.Text.ToString());
                 a = x * y;
                 string Query = "insert into transactions (transaction_date,transaction_type,customer,amount,status) values('" + currentDate + "',' RESERVATION ','" + textBox2.Text + "', @amount,'PENDING');";
@@ -158,25 +154,33 @@ namespace Project
 
         }
 
-
-
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            switch (comboBox1.SelectedItem.ToString())
+            {
 
+                case "301":
+                    x = 1000;
+                    break;
+                case "302":
+                    x = 700;
+                    break;
+
+                case "303":
+                    x = 500;
+                    break;
+                case "304":
+                    x = 1000;
+                    break;
+                case "305":
+                    x = 500;
+                    break;
+            }
         }
-
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
         }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-
-
         private void button1_Click(object sender, EventArgs e)
         {
             try

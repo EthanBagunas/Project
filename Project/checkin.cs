@@ -8,18 +8,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
-using System.Data;
+using Mysqlx.Crud;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Project
 {
     public partial class checkin : Form
     {
-        string conn = "server=localhost;user id=root; password=rootpass; database=hotel";
+        public string conn = "server=localhost;user id=root; password=rootpass; database=hotel";
         string currentDate = DateTime.Now.ToString("yyyy-MM-dd");
+
         public checkin()
         {
             InitializeComponent();
+
         }
 
         private void cusload_click(object sender, EventArgs e)
@@ -71,21 +73,33 @@ namespace Project
 
             try
             {
+                string strquery = "UPDATE rooms SET Status = 'OCCUPiED'\r\nWHERE rooms_id='" + comboBox1.Text + "';";
+                MySqlConnection MyConn = new MySqlConnection(conn);
+                MySqlCommand MyCommand = new MySqlCommand(strquery, MyConn);
+                MySqlDataReader MyReader1;
+                MyConn.Open();
+                MyReader1 = MyCommand.ExecuteReader();
+                MyConn.Close();
 
-                string Query = "INSERT into transactions(transaction_date,transaction_type,customer,amount,status) values('" + currentDate + "', 'CHECK-IN', @cus, @amount, 'PENDING')";
+
+
+                string Query = "INSERT into transactions(transaction_date,transaction_type,customer,amount,status) values('" + currentDate + "', 'CHECK-IN', @cus, @amount, 'PENDING');";
                 MySqlConnection MyConn2 = new MySqlConnection(conn);
                 MySqlCommand MyCommand2 = new MySqlCommand(Query, MyConn2);
                 MyCommand2.Parameters.AddWithValue("@amount", 200);
                 MyCommand2.Parameters.AddWithValue("@cus", textBox1.Text);
 
+
                 MySqlDataReader MyReader2;
                 MyConn2.Open();
                 MyReader2 = MyCommand2.ExecuteReader();
-
                 while (MyReader2.Read())
                 {
                 }
                 MyConn2.Close();
+
+
+
 
             }
             catch (Exception ex)
@@ -95,9 +109,69 @@ namespace Project
 
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+
+        private void out_Click_1(object sender, EventArgs e)
+        {
+            string receipt = "SELECT transaction_type, amount FROM transactions WHERE status = 'PENDING' AND customer= '" + textBox1.Text + "';";
+            string total = "SELECT SUM(amount) AS total_amount FROM transactions WHERE status = 'PENDING' AND customer = '" + textBox1.Text + "';";
+            string done = "UPDATE transactions SET status = 'COMPLETED' WHERE status = 'PENDING' AND customer = '" + textBox1.Text + "';";
+            Receipt rep = new Receipt(receipt, total, done);
+            rep.Show();
+            string Query = "UPDATE rooms SET Status = 'OPEN'\r\nWHERE rooms_id = '" + comboBox1.Text + "';";
+            MySqlConnection MyConn = new MySqlConnection(conn);
+            MySqlCommand MyCommand = new MySqlCommand(Query, MyConn);
+            MySqlDataReader MyReader2;
+            MyConn.Open();
+            MyReader2 = MyCommand.ExecuteReader();
+            MyConn.Close();
+            MessageBox.Show("THANK YOU!!!");
+        }
+
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+
+        private void textBox2_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                string Query = "SELECT * FROM customer WHERE Lastname = @lname;";
+                MySqlConnection myconn = new MySqlConnection(conn);
+                MySqlCommand cmd = new MySqlCommand(Query, myconn);
+                cmd.Parameters.AddWithValue("@lname", textBox2.Text);
+                MySqlDataAdapter MyAdapter = new MySqlDataAdapter();
+                MyAdapter.SelectCommand = cmd;
+                DataTable dTable = new DataTable();
+                MyAdapter.Fill(dTable);
+                dataGridView1.DataSource = dTable;
+            }
+        }
+
+        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                try
+                {
+                    string Query = "SELECT * FROM reservations WHERE check_in >= CURDATE() AND cus_id=@id;";
+                    MySqlConnection myconn = new MySqlConnection(conn);
+                    MySqlCommand cmd = new MySqlCommand(Query, myconn);
+                    cmd.Parameters.AddWithValue("@id", textBox1.Text);
+                    MySqlDataAdapter MyAdapter = new MySqlDataAdapter();
+                    MyAdapter.SelectCommand = cmd;
+                    DataTable dTable = new DataTable();
+                    MyAdapter.Fill(dTable);
+                    dataGridView1.DataSource = dTable;
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
         }
     }
 }

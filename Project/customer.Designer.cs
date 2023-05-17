@@ -45,7 +45,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(12, 35);
+            label2.Location = new Point(12, 75);
             label2.Name = "label2";
             label2.Size = new Size(75, 20);
             label2.TabIndex = 1;
@@ -54,7 +54,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(12, 77);
+            label3.Location = new Point(12, 117);
             label3.Name = "label3";
             label3.Size = new Size(76, 20);
             label3.TabIndex = 2;
@@ -63,7 +63,7 @@
             // contact
             // 
             contact.AutoSize = true;
-            contact.Location = new Point(12, 119);
+            contact.Location = new Point(12, 159);
             contact.Name = "contact";
             contact.Size = new Size(121, 20);
             contact.TabIndex = 3;
@@ -71,67 +71,72 @@
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(146, 35);
+            textBox2.Location = new Point(146, 75);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(152, 27);
             textBox2.TabIndex = 5;
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(146, 77);
+            textBox3.Location = new Point(146, 117);
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(152, 27);
             textBox3.TabIndex = 6;
             // 
             // textBox4
             // 
-            textBox4.Location = new Point(146, 119);
+            textBox4.Location = new Point(146, 159);
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(152, 27);
             textBox4.TabIndex = 7;
             // 
             // button1
             // 
+            button1.BackColor = Color.SandyBrown;
             button1.Location = new Point(40, 252);
             button1.Name = "button1";
-            button1.Size = new Size(94, 29);
+            button1.Size = new Size(111, 46);
             button1.TabIndex = 8;
             button1.Text = "Load";
-            button1.UseVisualStyleBackColor = true;
+            button1.UseVisualStyleBackColor = false;
             button1.Click += load_click;
             // 
             // insert
             // 
+            insert.BackColor = Color.SandyBrown;
             insert.Location = new Point(40, 308);
             insert.Name = "insert";
-            insert.Size = new Size(94, 29);
+            insert.Size = new Size(111, 46);
             insert.TabIndex = 9;
             insert.Text = "Insert";
-            insert.UseVisualStyleBackColor = true;
+            insert.UseVisualStyleBackColor = false;
             insert.Click += insert_Click;
             // 
             // button3
             // 
+            button3.BackColor = Color.SandyBrown;
             button3.Location = new Point(161, 252);
             button3.Name = "button3";
-            button3.Size = new Size(94, 29);
+            button3.Size = new Size(111, 46);
             button3.TabIndex = 10;
             button3.Text = "Delete";
-            button3.UseVisualStyleBackColor = true;
+            button3.UseVisualStyleBackColor = false;
             button3.Click += delete_Click;
             // 
             // button4
             // 
+            button4.BackColor = Color.SandyBrown;
             button4.Location = new Point(161, 308);
             button4.Name = "button4";
-            button4.Size = new Size(94, 29);
+            button4.Size = new Size(111, 46);
             button4.TabIndex = 11;
             button4.Text = "Update";
-            button4.UseVisualStyleBackColor = true;
+            button4.UseVisualStyleBackColor = false;
             button4.Click += update_Click;
             // 
             // dataGridView1
             // 
+            dataGridView1.BackgroundColor = Color.SandyBrown;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(319, 35);
             dataGridView1.Name = "dataGridView1";
@@ -146,6 +151,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Khaki;
             ClientSize = new Size(800, 450);
             Controls.Add(dataGridView1);
             Controls.Add(button4);

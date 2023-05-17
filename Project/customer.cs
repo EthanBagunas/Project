@@ -56,7 +56,7 @@ namespace Project
                 MySqlDataReader MyReader2;
                 MyConn2.Open();
                 MyReader2 = MyCommand2.ExecuteReader();
-               
+
                 while (MyReader2.Read())
                 {
                 }
@@ -81,7 +81,7 @@ namespace Project
                 MySqlDataReader MyReader2;
                 MyConn2.Open();
                 MyReader2 = MyCommand2.ExecuteReader();
-                
+
                 while (MyReader2.Read())
                 {
                 }
@@ -103,7 +103,7 @@ namespace Project
                 MySqlDataReader MyReader2;
                 myconn.Open();
                 MyReader2 = MyCommand2.ExecuteReader();
-                
+
                 while (MyReader2.Read())
                 {
                 }

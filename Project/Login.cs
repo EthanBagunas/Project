@@ -9,7 +9,8 @@ namespace Project
 {
     public partial class Login : Form
     {
-        string connectionString = "server=localhost;user id=root; password=rootpass; database=staff_schema";
+
+        public string connstring = "server=localhost;user id=root; password=rootpass; database=hotel";
 
 
         public Login()
@@ -23,14 +24,6 @@ namespace Project
 
         private void login1_Click(object sender, EventArgs e)
         {
-            //Transactions transactions = new Transactions();
-            //transactions.Show();
-            
-            empmain empmain = new empmain();
-            empmain.Show();
-
-            
-            /*
             if (textBox1.Text.Contains("admin") && textBox2.Text.Contains("admin"))
             {
                 admin admin = new admin();
@@ -38,9 +31,8 @@ namespace Project
             }
             else
             {
-
-                string query = "SELECT * FROM employee WHERE empname=@username AND emppass=@password";
-                MySqlConnection conn = new MySqlConnection(connectionString);
+                string query = "SELECT * FROM employee WHERE empfirst=@username AND password=@password";
+                MySqlConnection conn = new MySqlConnection(connstring);
                 MySqlCommand command = new MySqlCommand(query, conn);
 
                 conn.Open();
@@ -67,7 +59,7 @@ namespace Project
                     textBox2.Clear();
                 }
                 conn.Close();
-            }*/
+            }
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)

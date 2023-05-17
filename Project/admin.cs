@@ -19,23 +19,26 @@ namespace Project
         public admin()
         {
             InitializeComponent();
+
         }
 
-
+        DataTable dTable = new DataTable();
 
 
         private void Load_Click(object sender, EventArgs e)
         {
+            dTable.Clear();
+            dTable.Columns.Clear();
             try
             {
                 string table1 = comboBox1.SelectedItem.ToString();
                 string Query = "SELECT * FROM " + table1;
                 MySqlConnection myconn = new MySqlConnection(conn);
                 MySqlCommand cmd = new MySqlCommand(Query, myconn);
-                cmd.Parameters.AddWithValue("@select", comboBox1.SelectedItem.ToString);
                 MySqlDataAdapter MyAdapter = new MySqlDataAdapter();
                 MyAdapter.SelectCommand = cmd;
-                DataTable dTable = new DataTable();
+
+                dataGridView1.DataSource = null;
                 MyAdapter.Fill(dTable);
                 dataGridView1.DataSource = dTable;
             }
@@ -45,25 +48,8 @@ namespace Project
             }
         }
 
-        private void update_Click(object sender, EventArgs e)
-        {
-            string table2 = comboBox1.SelectedItem.ToString();
-            string query = "Select" + table2;
-            MySqlConnection myconn = new MySqlConnection(conn);
-            MySqlCommand command = new MySqlCommand(query, myconn);
-            MySqlDataAdapter adapter = new MySqlDataAdapter(command);
-
-            // create a DataTable and fill it with data from the database
-            DataTable table = new DataTable();
-            adapter.Fill(table);
 
 
-
-            // update the changes to the database using the data adapter
-            MySqlCommandBuilder builder = new MySqlCommandBuilder(adapter);
-            adapter.Update(table);
-
-        }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -72,8 +58,23 @@ namespace Project
 
         private void button1_Click(object sender, EventArgs e)
         {
-            admincus admincus = new admincus();
-            admincus.Show();
+            string table1 = comboBox1.SelectedItem.ToString();
+            MySqlConnection connection = new MySqlConnection(conn);
+            connection.Open();
+
+            // Create a new SqlDataAdapter with a SELECT statement to get the existing data
+            MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT * FROM " + table1, connection);
+
+            // Create a new SqlCommandBuilder to generate the UPDATE statement based on the SELECT statement
+            MySqlCommandBuilder builder = new MySqlCommandBuilder(adapter);
+
+            // Use the SqlDataAdapter's Update method to apply the changes to the database
+            adapter.Update(dTable);
+
+            // Close the connection
+            connection.Close();
         }
+
+        
     }
 }

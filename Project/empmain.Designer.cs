@@ -41,20 +41,22 @@
             timer1 = new System.Windows.Forms.Timer(components);
             pictureBox4 = new PictureBox();
             trans = new Button();
+            pictureBox5 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             SuspendLayout();
             // 
             // transact
             // 
-            transact.BackColor = Color.Cyan;
+            transact.BackColor = Color.SandyBrown;
             transact.BackgroundImageLayout = ImageLayout.Center;
             transact.FlatAppearance.BorderColor = Color.Cyan;
             transact.FlatStyle = FlatStyle.Popup;
-            transact.Font = new Font("Verdana", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            transact.Location = new Point(772, 446);
+            transact.Font = new Font("Baskerville Old Face", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            transact.Location = new Point(609, 441);
             transact.Name = "transact";
             transact.Size = new Size(197, 70);
             transact.TabIndex = 0;
@@ -64,12 +66,12 @@
             // 
             // reserve
             // 
-            reserve.BackColor = Color.Cyan;
+            reserve.BackColor = Color.SandyBrown;
             reserve.BackgroundImageLayout = ImageLayout.Center;
             reserve.FlatAppearance.BorderColor = Color.Cyan;
             reserve.FlatStyle = FlatStyle.Popup;
-            reserve.Font = new Font("Verdana", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            reserve.Location = new Point(350, 321);
+            reserve.Font = new Font("Baskerville Old Face", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            reserve.Location = new Point(187, 316);
             reserve.Margin = new Padding(3, 4, 3, 4);
             reserve.Name = "reserve";
             reserve.Size = new Size(197, 70);
@@ -80,12 +82,12 @@
             // 
             // customer
             // 
-            customer.BackColor = Color.Cyan;
+            customer.BackColor = Color.SandyBrown;
             customer.BackgroundImageLayout = ImageLayout.Center;
             customer.FlatAppearance.BorderColor = Color.Cyan;
             customer.FlatStyle = FlatStyle.Popup;
-            customer.Font = new Font("Verdana", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            customer.Location = new Point(350, 446);
+            customer.Font = new Font("Baskerville Old Face", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            customer.Location = new Point(187, 441);
             customer.Margin = new Padding(3, 4, 3, 4);
             customer.Name = "customer";
             customer.Size = new Size(197, 70);
@@ -96,14 +98,15 @@
             // 
             // monthCalendar1
             // 
-            monthCalendar1.Location = new Point(446, 45);
+            monthCalendar1.BackColor = Color.Coral;
+            monthCalendar1.Location = new Point(484, 48);
             monthCalendar1.Name = "monthCalendar1";
             monthCalendar1.TabIndex = 5;
             // 
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(225, 416);
+            pictureBox2.Location = new Point(62, 411);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(100, 100);
             pictureBox2.TabIndex = 7;
@@ -113,7 +116,7 @@
             // pictureBox3
             // 
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(225, 291);
+            pictureBox3.Location = new Point(62, 286);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(100, 100);
             pictureBox3.TabIndex = 8;
@@ -122,7 +125,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(647, 415);
+            pictureBox1.Location = new Point(484, 410);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(100, 100);
             pictureBox1.TabIndex = 9;
@@ -131,7 +134,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(540, 16);
+            label1.Location = new Point(1091, 9);
             label1.Name = "label1";
             label1.Size = new Size(79, 20);
             label1.TabIndex = 10;
@@ -141,7 +144,7 @@
             // pictureBox4
             // 
             pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(647, 291);
+            pictureBox4.Location = new Point(484, 286);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(100, 100);
             pictureBox4.TabIndex = 11;
@@ -149,12 +152,12 @@
             // 
             // trans
             // 
-            trans.BackColor = Color.Cyan;
+            trans.BackColor = Color.SandyBrown;
             trans.BackgroundImageLayout = ImageLayout.Center;
             trans.FlatAppearance.BorderColor = Color.Cyan;
             trans.FlatStyle = FlatStyle.Popup;
-            trans.Font = new Font("Verdana", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            trans.Location = new Point(772, 319);
+            trans.Font = new Font("Baskerville Old Face", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            trans.Location = new Point(609, 314);
             trans.Margin = new Padding(3, 4, 3, 4);
             trans.Name = "trans";
             trans.Size = new Size(197, 72);
@@ -163,13 +166,23 @@
             trans.UseVisualStyleBackColor = false;
             trans.Click += trans_Click;
             // 
+            // pictureBox5
+            // 
+            pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
+            pictureBox5.Location = new Point(172, 80);
+            pictureBox5.Name = "pictureBox5";
+            pictureBox5.Size = new Size(148, 149);
+            pictureBox5.TabIndex = 13;
+            pictureBox5.TabStop = false;
+            // 
             // empmain
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Khaki;
             BackgroundImageLayout = ImageLayout.Center;
-            ClientSize = new Size(1182, 628);
+            ClientSize = new Size(896, 575);
+            Controls.Add(pictureBox5);
             Controls.Add(trans);
             Controls.Add(pictureBox4);
             Controls.Add(label1);
@@ -187,6 +200,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -204,5 +218,6 @@
         private System.Windows.Forms.Timer timer1;
         private PictureBox pictureBox4;
         private Button trans;
+        private PictureBox pictureBox5;
     }
 }
