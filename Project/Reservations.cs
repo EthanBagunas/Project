@@ -74,10 +74,12 @@ namespace Project
 
             try
             {
-
-                string Query = "DELETE FROM reservations WHERE res_id = @id; INSERT into transactions(transaction_date,transaction_type,customer,amount,status) values('" + currentDate + "', 'CANCELLATION', @cus, @amount, 'PENDING')";
+               
+                string Query = "DELETE FROM reservations WHERE res_id = @id; INSERT into transactions(transaction_date,transaction_type,customer,amount,status) values('" + currentDate + "', 'CANCELLATION', @cus, @amount, 'CANCEL')";
                 MySqlConnection MyConn2 = new MySqlConnection(conn);
                 MySqlCommand MyCommand2 = new MySqlCommand(Query, MyConn2);
+
+                
                 MyCommand2.Parameters.AddWithValue("@id", dataGridView1.CurrentRow.Cells[0].Value);
                 MyCommand2.Parameters.AddWithValue("@amount", z);
                 MyCommand2.Parameters.AddWithValue("@cus", textBox2.Text);
@@ -90,6 +92,7 @@ namespace Project
                 {
                 }
                 MyConn2.Close();
+               
 
             }
             catch (Exception ex)
@@ -100,7 +103,7 @@ namespace Project
 
         private void reserve_Click(object sender, EventArgs e)
         {
-
+           
             string room = comboBox1.SelectedItem.ToString();
             string currentTime = DateTime.Now.ToString("hh:mm:ss");
             DateTime inDateTime = dateTimePicker1.Value;
@@ -122,6 +125,7 @@ namespace Project
                 {
                 }
                 myconn.Close();
+                
 
 
             }
@@ -133,7 +137,7 @@ namespace Project
             {
                 y = int.Parse(daytext.Text.ToString());
                 a = x * y;
-                string Query = "insert into transactions (transaction_date,transaction_type,customer,amount,status) values('" + currentDate + "',' RESERVATION ','" + textBox2.Text + "', @amount,'PENDING');";
+                string Query = "insert into transactions (transaction_date,transaction_type,customer,amount,status) values('" + currentDate + "',' RESERVATION ','" + textBox2.Text + "', @amount,'RESERVE');";
                 MySqlConnection myconn = new MySqlConnection(conn);
                 MySqlCommand MyCommand = new MySqlCommand(Query, myconn);
                 MyCommand.Parameters.AddWithValue("@amount", a);

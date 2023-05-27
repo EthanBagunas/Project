@@ -112,26 +112,30 @@ namespace Project
 
         private void out_Click_1(object sender, EventArgs e)
         {
-            string receipt = "SELECT transaction_type, amount FROM transactions WHERE status = 'PENDING' AND customer= '" + textBox1.Text + "';";
-            string total = "SELECT SUM(amount) AS total_amount FROM transactions WHERE status = 'PENDING' AND customer = '" + textBox1.Text + "';";
-            string done = "UPDATE transactions SET status = 'COMPLETED' WHERE status = 'PENDING' AND customer = '" + textBox1.Text + "';";
-            Receipt rep = new Receipt(receipt, total, done);
-            rep.Show();
-            string Query = "UPDATE rooms SET Status = 'OPEN'\r\nWHERE rooms_id = '" + comboBox1.Text + "';";
-            MySqlConnection MyConn = new MySqlConnection(conn);
-            MySqlCommand MyCommand = new MySqlCommand(Query, MyConn);
-            MySqlDataReader MyReader2;
-            MyConn.Open();
-            MyReader2 = MyCommand.ExecuteReader();
-            MyConn.Close();
-            MessageBox.Show("THANK YOU!!!");
+            try
+                {
+                    string receipt = "SELECT transaction_type,transaction_date, amount FROM transactions WHERE status = 'PENDING' AND customer= '" + textBox1.Text + "';";
+                    string total = "SELECT SUM(amount) AS total_amount FROM transactions WHERE status = 'PENDING' AND customer = '" + textBox1.Text + "';";
+                    string done = "UPDATE transactions SET status = 'COMPLETED' WHERE status = 'PENDING' AND customer = '" + textBox1.Text + "';";
+                    Receipt rep = new Receipt(receipt, total, done);
+                    rep.Show();
+                    string Query = "UPDATE rooms SET Status = 'OPEN'\r\nWHERE rooms_id = '" + comboBox1.Text + "';";
+                    MySqlConnection MyConn = new MySqlConnection(conn);
+                    MySqlCommand MyCommand = new MySqlCommand(Query, MyConn);
+                    MySqlDataReader MyReader2;
+                    MyConn.Open();
+                    MyReader2 = MyCommand.ExecuteReader();
+                    MyConn.Close();
+                    MessageBox.Show("THANK YOU!!!");
+                }
+            catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
         }
 
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+        
 
 
         private void textBox2_KeyDown(object sender, KeyEventArgs e)

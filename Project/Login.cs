@@ -24,6 +24,9 @@ namespace Project
 
         private void login1_Click(object sender, EventArgs e)
         {
+            empmain empmain = new empmain();
+            empmain.Show();
+            /*
             if (textBox1.Text.Contains("admin") && textBox2.Text.Contains("admin"))
             {
                 admin admin = new admin();
@@ -59,7 +62,7 @@ namespace Project
                     textBox2.Clear();
                 }
                 conn.Close();
-            }
+            }*/
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)

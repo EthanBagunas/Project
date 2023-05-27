@@ -43,8 +43,6 @@ namespace Project
                 try
                 {
                     connection.Open();
-
-
                     string rowsText1 = "";
                     foreach (DataRow row in dataTable.Rows)
                     {
@@ -52,6 +50,16 @@ namespace Project
                         rowsText1 += trans_type + "\n";
                     }
                     label1.Text = rowsText1;
+                    
+                    string rowsText3 = "";
+                    foreach (DataRow row in dataTable.Rows)
+                    {
+                        DateTime transactionDate = (DateTime)row["transaction_date"];
+                        string trans_date = transactionDate.ToString("yyyy-MM-dd");
+                        rowsText3 += trans_date + "\n";
+                    }
+
+                    label3.Text = rowsText3;
 
                     string rowsText2 = "";
                     foreach (DataRow row in dataTable.Rows)
@@ -63,15 +71,16 @@ namespace Project
 
 
 
+
                     object result = cmd2.ExecuteScalar();
 
                     if (result != null && result != DBNull.Value)
                     {
-                        label3.Text = $"Total Amount: {result.ToString()}";
+                        label6.Text = $"Total Amount: {result.ToString()}";
                     }
                     else
                     {
-                        label3.Text = "No data found.";
+                        label6.Text = "No data found.";
                     }
                 }
                 catch (Exception ex)

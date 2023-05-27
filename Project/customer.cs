@@ -48,7 +48,6 @@ namespace Project
         {
             try
             {
-
                 string Query = "DELETE FROM customer WHERE cus_id = @id;";
                 MySqlConnection MyConn2 = new MySqlConnection(conn);
                 MySqlCommand MyCommand2 = new MySqlCommand(Query, MyConn2);

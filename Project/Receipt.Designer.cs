@@ -30,10 +30,11 @@
         {
             label1 = new Label();
             label2 = new Label();
-            label3 = new Label();
             label4 = new Label();
             button1 = new Button();
             label5 = new Label();
+            label6 = new Label();
+            label3 = new Label();
             SuspendLayout();
             // 
             // label1
@@ -41,7 +42,7 @@
             label1.AutoSize = true;
             label1.BackColor = Color.White;
             label1.Font = new Font("Segoe MDL2 Assets", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(91, 92);
+            label1.Location = new Point(25, 162);
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
             label1.Size = new Size(47, 20);
@@ -53,25 +54,12 @@
             label2.AutoSize = true;
             label2.BackColor = Color.White;
             label2.Font = new Font("Segoe MDL2 Assets", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(234, 92);
+            label2.Location = new Point(373, 162);
             label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
             label2.Size = new Size(47, 20);
             label2.TabIndex = 2;
             label2.Text = "label2";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.BackColor = Color.White;
-            label3.Font = new Font("Segoe MDL2 Assets", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(126, 333);
-            label3.Margin = new Padding(2, 0, 2, 0);
-            label3.Name = "label3";
-            label3.Size = new Size(47, 20);
-            label3.TabIndex = 3;
-            label3.Text = "label3";
-            label3.Click += label3_Click;
             // 
             // label4
             // 
@@ -87,7 +75,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(157, 396);
+            button1.Location = new Point(161, 393);
             button1.Margin = new Padding(2);
             button1.Name = "button1";
             button1.Size = new Size(71, 22);
@@ -105,16 +93,35 @@
             label5.TabIndex = 6;
             label5.Text = "_________________________________";
             // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(161, 336);
+            label6.Name = "label6";
+            label6.Size = new Size(35, 15);
+            label6.TabIndex = 7;
+            label6.Text = "label6";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(161, 167);
+            label3.Name = "label3";
+            label3.Size = new Size(35, 15);
+            label3.TabIndex = 8;
+            label3.Text = "label3";
+            // 
             // Receipt
             // 
             AutoScaleDimensions = new SizeF(6F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(386, 440);
+            ClientSize = new Size(518, 493);
+            Controls.Add(label3);
+            Controls.Add(label6);
             Controls.Add(label5);
             Controls.Add(button1);
             Controls.Add(label4);
-            Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
             Font = new Font("Segoe MDL2 Assets", 9F, FontStyle.Regular, GraphicsUnit.Point);
@@ -130,9 +137,10 @@
 
         private Label label1;
         private Label label2;
-        private Label label3;
         private Label label4;
         private Button button1;
         private Label label5;
+        private Label label6;
+        private Label label3;
     }
 }
